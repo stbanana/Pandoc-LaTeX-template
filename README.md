@@ -16,12 +16,27 @@ windows 环境下，需要手动下载 `Pandoc` 和 `LaTeX`，并添加进环境
 ```powershell
 chcp 65001
 $OutputEncoding = [System.Text.UTF8Encoding]::new()
-& "e:\LaTeX_PROJECT\test\build.ps1"
+& ".\build.ps1"
+```
+3. 生成 html：使用完整指令链。不推荐，pandoc 产物 html 不便于美化。
+```powershell
+chcp 65001
+$OutputEncoding = [System.Text.UTF8Encoding]::new()
+$OutputDir = ".\output"
+New-Item -ItemType Directory -Force -Path $OutputDir | Out-Null
+Copy-Item -Path ".\assets" -Destination $OutputDir -Recurse -Force
+pandoc --from markdown+raw_tex --to html --standalone --toc --toc-depth=3 --quiet --metadata-file ".\metadata-html.yaml" --css "assets/css/document.css" ".\manuscript\00-frontmatter.md" ".\manuscript\01-version.md" ".\manuscript\02-toc.md" ".\manuscript\09-mainmatter.md" ".\manuscript\10-body.md" ".\manuscript\11-body1.md" ".\manuscript\80-appendix-marker.md" ".\manuscript\90-appendix.md" ".\manuscript\99-backmatter.md" -o "$OutputDir\product.html"
 ```
 
 ## 一个结果 pdf 的展示
 
 ![产物](https://cloudflare-imgbed-6qt.pages.dev/file/1773116302718_image.png)
+
+## 实际编写
+
+> [!NOTE]
+>
+> 内容产出仅需要按序编写 manuscript 文件夹中的所有 .md 文件。
 
 ## 目录与页码规则
 
