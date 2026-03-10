@@ -1,0 +1,105 @@
+\usepackage[fontset=none]{ctex}
+\usepackage{fontspec}
+\usepackage[
+  a4paper,
+  top=24mm,
+  bottom=16mm,
+  left=24mm,
+  right=24mm,
+  headheight=1mm,
+  headsep=16mm,
+  footskip=10mm
+]{geometry}
+\setmainfont{IBM Plex Sans}[
+  Path=assets/fonts/,
+  UprightFont=ibm-plex-sans-sc/fonts/complete/ttf/unhinted/IBMPlexSansSC-Regular.ttf,
+  ItalicFont=MapleMono-CN-unhinted/MapleMono-CN-Italic.ttf,
+  BoldFont=ibm-plex-sans-sc/fonts/complete/ttf/unhinted/IBMPlexSansSC-Bold.ttf,
+  BoldItalicFont=MapleMono-CN-unhinted/MapleMono-CN-BoldItalic.ttf
+]
+\setCJKmainfont{IBM Plex Sans}[
+  Path=assets/fonts/,
+  UprightFont=ibm-plex-sans-sc/fonts/complete/ttf/unhinted/IBMPlexSansSC-Regular.ttf,
+  ItalicFont=MapleMono-CN-unhinted/MapleMono-CN-Italic.ttf,
+  BoldFont=ibm-plex-sans-sc/fonts/complete/ttf/unhinted/IBMPlexSansSC-Bold.ttf,
+  BoldItalicFont=MapleMono-CN-unhinted/MapleMono-CN-BoldItalic.ttf
+]
+\usepackage{xcolor}
+\definecolor{chapterBlue}{HTML}{0F62FE}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{bookmark}
+\usepackage[normalem]{ulem}
+\renewcommand{\ULthickness}{0.8pt}
+\usepackage{hyperref}
+\hypersetup{bookmarksopen=true,bookmarksnumbered=true,colorlinks=true,linkcolor=chapterBlue,urlcolor=chapterBlue,citecolor=chapterBlue}
+\AtBeginDocument{%
+  % 覆盖 pandoc 模板的 hidelinks，确保链接显著可见
+  \hypersetup{colorlinks=true,allcolors=chapterBlue}%
+  % 让外链在正文里更“像链接”（下划线 + 颜色）
+  \let\productOrigHref\href
+  \renewcommand{\href}[2]{\productOrigHref{#1}{\textcolor{chapterBlue}{\uline{#2}}}}%
+  \let\productOrigUrl\url
+  \renewcommand{\url}[1]{\textcolor{chapterBlue}{\productOrigUrl{#1}}}%
+}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+\csname titleformat\endcsname{\chapter}[hang]
+  {\normalfont\huge\bfseries\color{chapterBlue}}
+  {\thechapter. }
+  {0pt}
+  {}
+\titlespacing*{\chapter}{0pt}{0.5em}{1em}
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
+\fancypagestyle{mainmatter}{
+  \fancyhf{}
+  \fancyhead[L]{\nouppercase{\leftmark}}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+}
+
+\fancypagestyle{appendixmatter}{
+  \fancyhf{}
+  \fancyhead[L]{\nouppercase{\leftmark}}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+}
+
+\fancypagestyle{frontmatterplain}{
+  \fancyhf{}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\makeatletter
+\newcommand{\productFrontmatterSetup}{%
+  \pagenumbering{Roman}%
+  \pagestyle{frontmatterplain}%
+  \let\ps@plain\ps@frontmatterplain%
+  \renewcommand{\thepage}{\Roman{page}}%
+}
+
+\newcommand{\productMainmatterSetup}{%
+  \pagenumbering{arabic}%
+  \setcounter{page}{0}%
+  \@addtoreset{page}{chapter}%
+  \renewcommand{\thepage}{\arabic{chapter}-\number\numexpr\value{page}+1\relax}%
+  \let\ps@plain\ps@mainmatter%
+  \pagestyle{mainmatter}%
+}
+
+\newcommand{\productAppendixSetup}{%
+  \pagenumbering{arabic}%
+  \setcounter{page}{0}%
+  \@addtoreset{page}{chapter}%
+  \renewcommand{\thepage}{\Alph{chapter}-\number\numexpr\value{page}+1\relax}%
+  \let\ps@plain\ps@appendixmatter%
+  \pagestyle{appendixmatter}%
+}
+\makeatother

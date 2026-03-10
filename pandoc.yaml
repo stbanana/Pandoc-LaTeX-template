@@ -1,0 +1,7 @@
+from: markdown+raw_tex
+to: pdf
+pdf-engine: xelatex
+standalone: true
+metadata-file: metadata.yaml
+include-in-header:
+  - tex/header.tex

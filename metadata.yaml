@@ -1,0 +1,7 @@
+lang: zh-CN
+documentclass: book
+classoption:
+  - oneside
+  - openany
+top-level-division: chapter
+number-sections: true
