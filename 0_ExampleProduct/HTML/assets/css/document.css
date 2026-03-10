@@ -1,0 +1,287 @@
+/* 产品说明书 HTML 样式 */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+body {
+  font-family: "IBM Plex Sans SC", "IBM Plex Sans", "Segoe UI", "Microsoft YaHei", "微软雅黑", sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #ffffff;
+  color: #161616;
+}
+
+/* 标题样式 */
+h1 {
+  color: #0f62fe;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #d0e2ff;
+}
+
+h1:first-of-type {
+  margin-top: 0;
+}
+
+h2 {
+  color: #161616;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  color: #393939;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h4 {
+  color: #525252;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 标题编号 */
+.header-section-number {
+  margin-right: 0.5em;
+  color: #0f62fe;
+}
+
+/* 段落 */
+p {
+  margin: 1em 0;
+  text-align: justify;
+}
+
+/* 链接 */
+a {
+  color: #0f62fe;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+a:hover {
+  border-bottom-color: #0f62fe;
+}
+
+/* 代码 */
+code {
+  font-family: "Maple Mono", "Consolas", "Monaco", monospace;
+  background: #f4f4f4;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  color: #da1e28;
+}
+
+pre {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  border-left: 3px solid #0f62fe;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  color: #161616;
+}
+
+/* 表格 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+thead {
+  background: #e0e0e0;
+}
+
+th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #161616;
+  border-bottom: 2px solid #0f62fe;
+}
+
+td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:hover {
+  background: #f4f4f4;
+}
+
+/* 列表 */
+ul, ol {
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+li {
+  margin: 0.5em 0;
+}
+
+/* 引用 */
+blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  background: #f4f4f4;
+  border-left: 4px solid #0f62fe;
+  color: #525252;
+}
+
+blockquote p {
+  margin: 0.5em 0;
+}
+
+/* 图片 */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+figure {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+figure img {
+  margin: 0 auto 0.5rem;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: #525252;
+  font-style: italic;
+}
+
+/* 列布局支持（用于并排图片） */
+.columns {
+  display: flex;
+  gap: 2%;
+  margin: 1.5rem 0;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.column {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.column img {
+  margin: 0 auto 0.5rem;
+}
+
+.column p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #525252;
+  font-style: italic;
+}
+
+/* 水平线 */
+hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 2rem 0;
+}
+
+/* 标题块 */
+header#title-block-header {
+  text-align: center;
+  padding: 2rem 0;
+  border-bottom: 3px solid #0f62fe;
+  margin-bottom: 3rem;
+}
+
+header#title-block-header .title {
+  font-size: 2.5rem;
+  color: #0f62fe;
+  margin: 0;
+  border: none;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+  
+  .columns {
+    flex-direction: column;
+  }
+  
+  .column {
+    width: 100% !important;
+    margin-bottom: 1rem;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.35rem;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+  }
+  
+  table {
+    font-size: 0.85rem;
+  }
+  
+  th, td {
+    padding: 0.5rem;
+  }
+}
+
+/* 打印样式 */
+@media print {
+  body {
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  a {
+    color: inherit;
+    border-bottom: none;
+  }
+  
+  pre {
+    page-break-inside: avoid;
+  }
+  
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+  }
+}

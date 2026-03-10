@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>产品说明书</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="assets/css/document.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">产品说明书</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#版本记录" id="toc-版本记录">版本记录</a></li>
+<li><a href="#总览" id="toc-总览">总览</a>
+<ul>
+<li><a href="#产品定位" id="toc-产品定位">产品定位</a>
+<ul>
+<li><a href="#目标用户" id="toc-目标用户">目标用户</a></li>
+</ul></li>
+<li><a href="#价值主张" id="toc-价值主张">价值主张</a></li>
+</ul></li>
+<li><a href="#功能说明" id="toc-功能说明">功能说明</a>
+<ul>
+<li><a href="#核心功能" id="toc-核心功能">核心功能</a>
+<ul>
+<li><a href="#功能边界" id="toc-功能边界">功能边界</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#运维与支持" id="toc-运维与支持">运维与支持</a>
+<ul>
+<li><a href="#部署与环境" id="toc-部署与环境">部署与环境</a></li>
+</ul></li>
+<li><a href="#指令支持" id="toc-指令支持">指令支持</a></li>
+<li><a href="#术语表" id="toc-术语表">术语表</a></li>
+<li><a href="#参考信息" id="toc-参考信息">参考信息</a></li>
+</ul>
+</nav>
+<h1 id="版本记录">版本记录</h1>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>日期</th>
+<th>变更摘要</th>
+<th>作者</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1.0</td>
+<td>2026-03-09</td>
+<td>初版</td>
+<td>编辑者</td>
+</tr>
+</tbody>
+</table>
+<h1 id="总览">总览</h1>
+<h2 id="产品定位">产品定位</h2>
+<p>ABCDEFG</p>
+<p>abcdefg</p>
+<h3 id="目标用户">目标用户</h3>
+<p>舞低杨柳楼心月，歌尽桃花扇底风。</p>
+<h4 id="细分说明不进目录">细分说明（不进目录）</h4>
+<p>这段正文展示了在正文中的标记，一个<strong>加粗</strong>，一个<em>斜体</em>，一个，一个<sup>上标</sup>，一个<sub>下标</sub>，一个<a
+href="https://www.yono233.cn">超链接</a>。</p>
+<h2 id="价值主张">价值主张</h2>
+<h1 id="功能说明">功能说明</h1>
+<h2 id="核心功能">核心功能</h2>
+<p>这是一个横向排版的图片示例（示例1、示例2）。这里横向排版用作显示，没有自动编号。
+写法相对简单。pdf产物可以正确显示，html产物则不可以。</p>
+<p><img src="assets/images/示例1.png" style="width:48.0%"
+alt="图片描述1" /> <img src="assets/images/示例2.jpg"
+style="width:48.0%" alt="图片描述2" /></p>
+<p>这是一个单独排版的图片示例（示例3）。单独排版会有自动编号。</p>
+<figure>
+<img src="assets/images/示例3.jpg" style="width:50.0%"
+alt="图片描述3" />
+<figcaption aria-hidden="true">图片描述3</figcaption>
+</figure>
+<h3 id="功能边界">功能边界</h3>
+<p>这里填写功能边界的内容。</p>
+<h1 id="运维与支持">运维与支持</h1>
+<h2 id="部署与环境">部署与环境</h2>
+<p>这是一个横向排版的图片示例（示例1、示例2）。</p>
+<p>这里使用的 latex 或 html 原版写法，排版自由，产生编号。</p>
+<div class="columns">
+  <div class="column" style="width: 48%;">
+    <img src="assets/images/示例1.png" alt="图片描述1" />
+    <p>图片描述1</p>
+  </div>
+  <div class="column" style="width: 48%;">
+    <img src="assets/images/示例2.jpg" alt="图片描述2" />
+    <p>图片描述2</p>
+  </div>
+</div>
+<p>这是一个单独排版的图片示例（示例3）。</p>
+<figure id="fig:sample3">
+<img src="assets/images/示例3.jpg" style="width:50.0%"
+alt="图片描述3" />
+<figcaption aria-hidden="true">图片描述3</figcaption>
+</figure>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<h1 id="指令支持">指令支持</h1>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<p>填充到下一页</p>
+<h1 id="术语表">术语表</h1>
+<p>这里填写术语表内容。</p>
+<h1 id="参考信息">参考信息</h1>
+<p>这里填写参考信息内容。</p>
+</body>
+</html>
