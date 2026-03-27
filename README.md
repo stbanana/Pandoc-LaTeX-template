@@ -61,7 +61,7 @@ pandoc --from markdown+raw_tex --to html --standalone --toc --toc-depth=3 --quie
 ```powershell
 chcp 65001
 $OutputEncoding = [System.Text.UTF8Encoding]::new()
-& "e:\LaTeX_PROJECT\test\build.ps1"
+& ".\build.ps1"
 ```
 
 ## 输出文件
