@@ -4,7 +4,7 @@
 
 windows 环境下，需要手动下载 `Pandoc` 和 `LaTeX`，并添加进环境变量。
 
-确认使用 `Pandoc -v` `LaTeX -v` 终端指令可以正确获得软件版本号。
+确认使用 `Pandoc --version` `LaTeX --version` 终端指令可以正确获得软件版本号。
 
 ## 快速开始
 
