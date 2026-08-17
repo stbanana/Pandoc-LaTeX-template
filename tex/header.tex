@@ -34,6 +34,9 @@
 \renewcommand{\ULthickness}{0.8pt}
 \usepackage{hyperref}
 \hypersetup{bookmarksopen=true,bookmarksnumbered=true,colorlinks=true,linkcolor=chapterBlue,urlcolor=chapterBlue,citecolor=chapterBlue}
+% 书签深度独立于目录页深度（tocdepth 管目录页，bookmark 的 depth 管 PDF 书签）：
+% 目录页只展示到 H3，而 PDF 书签保留全部层级（含 H4/H5），便于电脑端跳转
+\bookmarksetup{depth=4}
 \AtBeginDocument{%
   % 覆盖 pandoc 模板的 hidelinks，确保链接显著可见
   \hypersetup{colorlinks=true,allcolors=chapterBlue}%
@@ -43,7 +46,7 @@
   \let\productOrigUrl\url
   \renewcommand{\url}[1]{\textcolor{chapterBlue}{\productOrigUrl{#1}}}%
 }
-\setcounter{tocdepth}{3}
+\setcounter{tocdepth}{2}
 \setcounter{secnumdepth}{3}
 \csname titleformat\endcsname{\chapter}[hang]
   {\normalfont\huge\bfseries\color{chapterBlue}}
